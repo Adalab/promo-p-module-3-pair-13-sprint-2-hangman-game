@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+// import { Route, Switch } from 'react-router-dom';
 
 // Api
 import getWordFromApi from '../services/api';
@@ -9,6 +9,13 @@ import '../styles/Dummy.scss';
 import '../styles/Letters.scss';
 import '../styles/Form.scss';
 import '../styles/Header.scss';
+
+// "Partials"
+import Header from './Header';
+import Dummy from './Dummy';
+import Form from './Form';
+import SolutionLetters from './SolutionLetters';
+import ErrorLetters from './ErrorLetters';
 
 function App() {
   const [word, setWord] = useState('');
@@ -93,52 +100,14 @@ function App() {
 
   return (
     <div className='page'>
-      <header>
-        <h1 className='header__title'>Juego del ahorcado</h1>
-      </header>
+      <Header />
       <main className='main'>
         <section>
-          <div className='solution'>
-            <h2 className='title'>Solución:</h2>
-            <ul className='letters'>{renderSolutionLetters()}</ul>
-          </div>
-          <div className='error'>
-            <h2 className='title'>Letras falladas:</h2>
-            <ul className='letters'>{renderErrorLetters()}</ul>
-          </div>
-          <form className='form' onSubmit={handleSubmit}>
-            <label className='title' htmlFor='last-letter'>
-              Escribe una letra:
-            </label>
-            <input
-              autoFocus
-              autoComplete='off'
-              className='form__input'
-              maxLength='1'
-              type='text'
-              name='last-letter'
-              id='last-letter'
-              value={lastLetter}
-              onKeyDown={handleKeyDown}
-              onChange={handleChange}
-            />
-          </form>
+          <SolutionLetters />
+          <ErrorLetters />
+          <Form />
         </section>
-        <section className={`dummy error-${getNumberOfErrors()}`}>
-          <span className='error-13 eye'></span>
-          <span className='error-12 eye'></span>
-          <span className='error-11 line'></span>
-          <span className='error-10 line'></span>
-          <span className='error-9  line'></span>
-          <span className='error-8  line'></span>
-          <span className='error-7  line'></span>
-          <span className='error-6  head'></span>
-          <span className='error-5  line'></span>
-          <span className='error-4  line'></span>
-          <span className='error-3  line'></span>
-          <span className='error-2  line'></span>
-          <span className='error-1  line'></span>
-        </section>
+        <Dummy />
       </main>
     </div>
   );
