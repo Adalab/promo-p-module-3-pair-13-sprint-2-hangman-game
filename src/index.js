@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 import App from './components/App';
 
-ReactDOM.render(
-  <HashRouter>
+import './styles/index.scss';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <BrowserRouter>
     <App />
-  </HashRouter>,
-  document.getElementById('root')
+  </BrowserRouter>
 );

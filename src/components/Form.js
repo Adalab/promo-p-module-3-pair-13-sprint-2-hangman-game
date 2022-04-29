@@ -1,3 +1,5 @@
+import '../styles/components/Form.scss';
+
 function Form() {
   return (
     <form className='form' onSubmit={handleSubmit}>

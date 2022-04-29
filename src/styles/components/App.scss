@@ -1,7 +1,8 @@
 // Reset
 @font-face {
   font-family: 'KgTenThousandReasons';
-  src: url('./KgTenThousandReasons-R1ll.ttf') format('truetype');
+  // src: url({KgTenThousandReasons-R1ll.ttf}) format('truetype');
+  src: url({font}) format('truetype');
 }
 
 * {
@@ -26,7 +27,7 @@
   padding: 2rem;
   width: 100%;
   min-height: 100vh;
-  background-image: url('../images/blackboard.jpg');
+  background-image: url({blackboard});
   background-size: cover;
   background-position: center center;
 }

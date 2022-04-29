@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
-// import { Route, Switch } from 'react-router-dom';
+// import { Route, Routes } from 'react-router-dom';
 
 // Api
 import getWordFromApi from '../services/api';
 // Estilos
 import '../styles/App.scss';
-import '../styles/Dummy.scss';
-import '../styles/Letters.scss';
-import '../styles/Form.scss';
-import '../styles/Header.scss';
+// Fuente
+import font from '../fonts/KgTenThousandReasons-R1ll.ttf';
+// Imagen
+import blackboard from '../images/blackboard.jpg';
 
 // "Partials"
 import Header from './Header';
